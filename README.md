@@ -5,7 +5,7 @@
 
 ## ALLIES
 <!--START_SECTION:news-->
-* Virtu**A**l ce**LL** dynam**I**cs on **E**nergy land**S**capes (**ALLIES**) a comprehensive pipeline for benchmarking attractor detection in Boolean-network and diffusion-based models under *in silico* driver gene perturbations. 
+* Virtu**A**l ce**LL** dynam**I**cs on **E**nergy land**S**capes (**ALLIES**) is a comprehensive pipeline for benchmarking attractor detection in Boolean-network and diffusion-based models under *in silico* driver gene perturbations. 
 * If you have any questions about **ALLIES**, please directly contact the last corresponding author [Prof. Zhi-Ping Liu](https://scholar.google.com/citations?user=zkBXb_kAAAAJ&hl=zh-CN&oi=ao) with the E-mail: zpliu@sdu.edu.cn
 <!--END_SECTION:news-->
 
