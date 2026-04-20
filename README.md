@@ -1,6 +1,6 @@
 # [CellLand for Cell dynamics on energy Landscapes](https://github.com/zpliulab/CellLand)
 
-**CellLand** bundles **PCA and energy-landscape visualizations** (EMT, melanoma traces, SERGIO-style examples) with mirrored input data, and a **vendored copy of `bmodel`** under `Code/bmodel/`. You can run the Jupyter workflows from this folder directly.
+**CellLand** benchmarks **PCA-based energy-landscape mapping** on EMT-MET, Melanoma, and SERGIO-simulated networks with prior knowledge, you can run the workflows [PCA_visualization.ipynb](https://github.com/zpliulab/ALLIES/blob/main/Code/PCA_visualization.ipynb) directly from this folder.
 
 ![Screenshot](Figure/Framwork_Github.png)
 
@@ -11,8 +11,10 @@
 
 <!--START_SECTION:news-->
 
-* **CellLand** (**Cell** dynamics on energy **Land**scapes) is a comprehensive pipeline for benchmarking attractor detection in Boolean-network and diffusion-based models under *in silico* driver gene perturbations.
-* Questions about **CellLand** itself are best directed to the last corresponding author **[Prof. Zhi-Ping Liu](https://scholar.google.com/citations?user=zkBXb_kAAAAJ&hl=zh-CN&oi=ao)** (e-mail: zpliu@sdu.edu.cn).
+* **CellLand** (**Cell** dynamics on energy **Land**scapes) is a comprehensive pipeline for benchmarking attractor detection in Boolean-network and diffusion-based models under *in silico* driver-gene perturbations.
+* **Data** contains all input and output files. Because some files exceed 100 MB, they cannot be uploaded to this repository; all data analyzed in this work are available on figshare: https://figshare.com/articles/dataset/CellLand_supplementary_data/32055507.
+* **Tutorial notebook:** [PCA_visualization.ipynb](https://github.com/zpliulab/ALLIES/blob/main/Code/PCA_visualization.ipynb) provides a fully reproducible workflow.
+* Questions about **CellLand** should be directed to the corresponding author, **[Prof. Zhi-Ping Liu](https://scholar.google.com/citations?user=zkBXb_kAAAAJ&hl=zh-CN&oi=ao)** (email: zpliu@sdu.edu.cn).
 
 <!--END_SECTION:news-->
 
