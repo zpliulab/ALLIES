@@ -4,9 +4,12 @@
 
 # CellLand — do not commit large inputs, generated outputs, or the full notebook variant
 Code/PCA_full.ipynb
-Data/
+# Data/
 Result/
-Results/
+Data/Bmodel/Result/stabEMT_106.csv/
+Data/Bmodel/Result/stabenergyEMT_106.csv/
+Data/Bmodel/Result/stabpointEMT_106.csv/
+Data/Bmodel/ResultEMTPertur/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

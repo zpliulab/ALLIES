@@ -1,10 +1,10 @@
-## 2022.9.15 对example0915的稳态结果进行处理
-## 2022.9.16 不进行 unique, 直接输出result
-## 2022.9.16 注释前3部分，只运行10^3/4等，看一下结果
-## 2022.10.3 对KO or OE的结果进行分析
-## 2022.10.5 运行KO的结果得到一维曲线
-## 2022.10.5 运行对一个 gene hold OFF 的结果
-## 2022.10.22 copy from StabPointSeek.R try EMT_ACIPE的结果如何
+## 2022.9.15 Process steady-state results from example0915
+## 2022.9.16 Do not apply unique; output results directly
+## 2022.9.16 Comment out the first three parts, run only 10^3/4, and check the results
+## 2022.10.3 Analyze KO or OE results
+## 2022.10.5 Run KO results to obtain a 1D curve
+## 2022.10.5 Run the result for one gene held OFF
+## 2022.10.22 Copy from StabPointSeek.R and test how EMT_ACIPE results look
 ## 2022.12.10 See the EMT probability when each node OE, stable perburtation
               # compute the Freq of Ecadhin node's -1 (M state)
 ## 2026.04.20 Clean the code - '/home/lingyu/ssd/R/Landscape/R'
@@ -13,7 +13,7 @@
 # EMT_RACIP  10^6 ----------------------------------------------------------
 rm(list = ls())
 
-# setwd("D:/E/博士/Python/bmodel/Result")
+# setwd("D:/E/PhD/Python/bmodel/Result")
 # setwd("/home/lly/Python/bmodel/Result/ResultEMT2")
 setwd("/home/lingyu/ssd/Python/Bmodel/ALLIES/Data/Bmodel/Result/")
 
@@ -39,50 +39,10 @@ which(colnames(potengy) == "SNAI1")     # In column 5
 
 
 
-
-
-
-
-
-
-
-
-
-# # 2022.10.3 处理扰动后的稳态和能量 ---------------------------------------------------
-# rm(list = ls())
-
-# # setwd("D:/E/博士/Python/bmodel/ResultPertur")
-# # setwd("/home/lly/Python/bmodel/ResultPertur")
-# setwd("/home/lingyu/ssd/Python/Bmodel/Result/")
-
-
-# ## parameter
-# num = 106
-
-# ## steady states
-
-# stabponit <- read.csv(paste("sspointEMT", num, ".csv", sep=""), header=TRUE, sep = ',')[,-1]
-# which(colnames(stabponit) == "SNAI1")
-
-# ## energy
-# stabenergy <- as.data.frame(read.csv(paste("energyEMT", num, ".csv", sep=""), header=TRUE, sep = ',')[,-1])
-# # View(stabenergy[1:10,])
-
-# ## point and energy
-# potengy <- cbind(stabponit, as.matrix(stabenergy))
-# colnames(potengy) <- c(colnames(stabponit), "Energy")
-# write.csv(potengy, paste("perturEMT", num, ".csv", sep=""), row.names = F)
-
-
-
-
-
-
-
 # 2022.10.5 Handling steady state and energy after perturbation. examplePertur_106_1.py neg keeps OFF ------------------------------------
 rm(list = ls())
 
-# setwd("D:/E/博士/Python/bmodel/ResultPertur")
+# setwd("D:/E/PhD/Python/bmodel/ResultPertur")
 # setwd("/home/lly/Python/bmodel/ResultPertur")
 setwd("/Users/lilingyu/E/PhD/Python/bmodel/ResultEMTPertur")
 
@@ -103,10 +63,6 @@ stabenergy <- as.data.frame(read.csv(paste("energyEMT", per, num,".csv", sep="")
 potengy <- cbind(stabponit, as.matrix(stabenergy))
 colnames(potengy) <- c(colnames(stabponit), "Energy")
 write.csv(potengy, paste("perturEMT", per, num, ".csv", sep=""), row.names = F)
-
-
-
-
 
 
 
@@ -138,9 +94,9 @@ stabponit = read.csv(file = "OEstable/sspointEMTpos100000.csv", header = T, sep 
 
 
 setwd('/home/lly/Python/bmodel/Data/EMTPerturData/sspoint')
-myfile = list.files("OEstable")                #list.files命令将input文件夹下所有文件名输入a
-dir = paste("./OEstable/", myfile, sep = "")     #用paste命令构建路径变量dir
-n = length(dir)                                  #读取dir长度，也就是文件夹下的文件个数
+myfile = list.files("OEstable")                # list.files reads all file names in the input folder
+dir = paste("./OEstable/", myfile, sep = "")     # use paste to build the path variable dir
+n = length(dir)                                  # length of dir, i.e., number of files in the folder
 
 
 
@@ -173,7 +129,7 @@ pro[1,2]
 ## save
 # write.csv(pro, "EMTprob.csv", row.names = F)
 
-## 降序
+## descending order
 prob1 <- pro[order(pro[,2]), ]
 # rownames(prob1) <- pro[,1]
 prob2 <- prob1[,-1]
@@ -290,9 +246,9 @@ for (l in 1:4) {
   
   ## load data
   setwd('/home/lly/Python/bmodel/Data/EMTPerturData/sspoint')
-  myfile = list.files(filename[l])                #list.files命令将input文件夹下所有文件名输入a
-  dir = paste("./",filename[l] ,"/", myfile, sep = "")     #用paste命令构建路径变量dir
-  n = length(dir)                                  #读取dir长度，也就是文件夹下的文件个数
+  myfile = list.files(filename[l])                # list.files reads all file names in the input folder
+  dir = paste("./",filename[l] ,"/", myfile, sep = "")     # use paste to build the path variable dir
+  n = length(dir)                                  # length of dir, i.e., number of files in the folder
   
   
   
@@ -332,7 +288,7 @@ for (l in 1:4) {
   ## save
   write.csv(pro, paste("EMTprob",filename[l],".csv", sep = ""), row.names = F)
   
-  ## 降序
+  ## descending order
   prob1 <- pro[order(pro[,2]), ]
   # rownames(prob1) <- pro[,1]
   prob2 <- prob1[,-1]
@@ -403,19 +359,17 @@ p = ggplot(data = mydata,
   theme(panel.grid.major = element_line(colour = NA),
         panel.background = element_rect(fill = "transparent", colour = NA),
         plot.background = element_rect(fill = "transparent", colour = NA),
-        panel.grid.minor =  element_blank(),    #以上代码用于去除网格线且保留坐标轴边框
-        # text = element_text(family = "图儿"),  #设置中文字体的显示
-        legend.position = "top",    #更改图例位置，放至图内部的左上角# c(.060, .655), 
+        panel.grid.minor =  element_blank(),    # the code above removes grid lines while keeping axis borders
+        # text = element_text(family = "Tu'er"),  # set display of Chinese font
+        legend.position = "top",    # change legend position to the upper-left inside the plot # c(.060, .655), 
         legend.box.background = element_rect(color = NA),
         panel.border = element_rect(size=2,fill = 'transparent'),
         axis.text = element_text(color='black'),
         axis.text.x = element_text(color='black', angle = 45, hjust = 0.5, vjust = 0.5)
-        )   #为图例加边框线
+        )   # add a border line for the legend
 
 p
 
 
 ## save figure
 ggsave(p, filename = 'Prob.pdf', width = 15, height = 5, device = cairo_pdf)
-
-
